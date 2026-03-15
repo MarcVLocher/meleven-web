@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meleven AG | Merchant Banking Kanzlei</title>
-    <meta name="description" content="Diskrete Merchant Banking Kanzlei in Thundorf. Betreuung von Familien, institutionellen Anlegern und Wirtschaftskanzleien.">
+    <title>Meleven AG | Merchant Banking</title>
+    <meta name="description" content="Diskrete Merchant Banking Kanzlei. Substanz, Präzision, Diskretion.">
     <style>
         :root {
-            --accent: #660000; /* Ochsenblut-Rot */
-            --text-main: #111111;
-            --text-light: #555555;
-            --bg-color: #fafafa;
+            --bg-color: #F4F0EC; /* Zartes Sand- / Marronibraun */
+            --mokka: #4A3525;    /* Mokkabraun für Linien und Akzente */
+            --text-main: #1A1A1A;
+            --text-light: #444444;
         }
 
         * {
@@ -20,148 +20,205 @@
         }
 
         body {
-            font-family: "Hoefler Text", "Baskerville", "Georgia", serif;
-            line-height: 1.6;
-            color: var(--text-main);
+            /* Moderne, serifenlose Systemschrift für optimale Lesbarkeit und Nüchternheit */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
-            max-width: 650px;
+            color: var(--text-main);
+            line-height: 1.5;
+            max-width: 680px;
             margin: 8vh auto;
-            padding: 0 20px;
+            padding: 0 24px;
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
+            /* Silbentrennung aktivieren */
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
         }
 
         header {
-            border-bottom: 1px solid var(--accent);
-            padding-bottom: 15px;
-            margin-bottom: 40px;
+            border-bottom: 3px solid var(--mokka);
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+        }
+
+        .claim {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--mokka);
+            margin-bottom: 15px;
         }
 
         h1 {
-            font-size: 1.4rem;
-            font-weight: normal;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
         }
 
         h2 {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-top: 35px;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--mokka);
+            margin-top: 40px;
+            margin-bottom: 8px;
         }
 
         p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+            font-size: 1.25rem; /* Vergrösserte, souveräne Proportion */
+            font-weight: 400;
+            text-align: left;
+            margin-bottom: 0;
         }
 
         .contact-block {
             margin-top: 50px;
             padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-            font-size: 1rem;
+            border-top: 3px solid var(--mokka);
+            font-size: 1.25rem;
         }
 
         a {
             color: var(--text-main);
             text-decoration: none;
-            border-bottom: 1px solid var(--accent);
+            border-bottom: 1px solid var(--mokka);
             transition: color 0.2s ease;
         }
 
         a:hover {
-            color: var(--accent);
+            color: var(--mokka);
         }
 
-        /* Juristischer Bereich */
-        .legal-section {
+        /* Juristischer Bereich - Aufklappbar */
+        .legal-nav {
             margin-top: 60px;
             padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid #dcd7d2;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        details {
             font-size: 0.85rem;
             color: var(--text-light);
+            margin-bottom: 10px;
         }
 
-        .legal-section h3 {
-            font-size: 0.85rem;
-            font-weight: bold;
+        summary {
+            cursor: pointer;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-top: 20px;
-            margin-bottom: 5px;
-            color: var(--text-main);
+            list-style: none;
+            color: var(--mokka);
         }
 
-        .legal-section p {
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary {
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--mokka);
+            display: inline-block;
+        }
+
+        .legal-content {
+            padding-top: 5px;
+            padding-bottom: 20px;
             font-size: 0.85rem;
-            margin-bottom: 15px;
+            line-height: 1.5;
+            width: 100%;
         }
 
         @media (max-width: 600px) {
             body { margin: 5vh auto; }
+            .legal-nav { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="claim">Substanz. Präzision. Diskretion.</div>
         <h1>Meleven AG</h1>
     </header>
 
     <main>
-        <p>
-            Wir sind eine diskrete Merchant Banking Kanzlei. Unsere Schweizer Klienten schätzen unaufgeregtes, akribisch genaues Arbeiten.
-        </p>
+        <section>
+            <h2>Kanzlei</h2>
+            <p>
+                Die diskrete Merchant Banking Kanzlei für anspruchsvolle Schweizer Klienten. Im Zentrum steht unaufgeregtes, akribisch genaues Arbeiten auf höchstem Niveau.
+            </p>
+        </section>
 
-        <h2>Unsere Methode</h2>
-        <p>
-            Jede Akte wird forensisch kühl geprüft. Streng logisch analysiert. Chirurgisch präzise umgesetzt. Kompromisslos in Ihrem Interesse.
-        </p>
+        <section>
+            <h2>Mandanten</h2>
+            <p>
+                Betreuung von Familien, institutionellen Anlegern und Wirtschaftskanzleien. Der strategische Fokus liegt exklusiv auf Immobilien und Unternehmensbeteiligungen.
+            </p>
+        </section>
 
-        <h2>Mandanten und Fokus</h2>
-        <p>
-            Wir betreuen Familien, institutionelle Anleger und Wirtschaftskanzleien. Unsere Tätigkeitsgebiete sind Immobilien und Unternehmensbeteiligungen.
-        </p>
+        <section>
+            <h2>Methode</h2>
+            <p>
+                Jede Akte erfordert forensisch kühle Prüfung und streng logische Analyse. Die chirurgisch präzise Umsetzung erfolgt danach kompromisslos im Klienteninteresse.
+            </p>
+        </section>
 
-        <h2>Unsere Struktur</h2>
-        <p>
-            Die Meleven AG ist zu 100 Prozent in Familienbesitz. Wir arbeiten unabhängig. Wir kommunizieren auf Deutsch, Englisch, Französisch und Italienisch. Unser Honorar vereinbaren wir individuell.
-        </p>
+        <section>
+            <h2>Struktur</h2>
+            <p>
+                Einhundert Prozent Familienbesitz garantieren vollkommene Unabhängigkeit. Die Mandatsführung erfolgt fliessend auf Deutsch, Englisch, Französisch und Italienisch.
+            </p>
+        </section>
+
+        <section>
+            <h2>Kontakt</h2>
+            <div class="contact-block" style="border-top: none; padding-top: 0; margin-top: 8px;">
+                Meleven AG<br>
+                Gehrenstrasse 10<br>
+                8512 Thundorf<br>
+                Schweiz<br><br>
+                <a href="mailto:mail@meleven.ch">mail@meleven.ch</a>
+            </div>
+        </section>
     </main>
 
-    <div class="contact-block">
-        Meleven AG<br>
-        Gehrenstrasse 10<br>
-        8512 Thundorf<br><br>
-        <a href="mailto:mail@meleven.ch">mail@meleven.ch</a>
+    <div class="legal-nav">
+        <details name="legal">
+            <summary>Impressum</summary>
+            <div class="legal-content">
+                Gemäss Art. 3 Abs. 1 lit. s UWG:<br>
+                Meleven AG<br>
+                Gehrenstrasse 10<br>
+                8512 Thundorf<br>
+                Schweiz<br><br>
+                Kontakt: mail@meleven.ch<br>
+                Vertretung: [Name, Funktion]<br>
+                Handelsregisteramt: Kanton Thurgau<br>
+                UID: [CHE-123.456.789]
+            </div>
+        </details>
+
+        <details name="legal">
+            <summary>Datenschutz</summary>
+            <div class="legal-content">
+                Diskretion ist massgeblich. Diese Webseite setzt keine Cookies, nutzt keine Analysetools und speichert keine Verbindungsdaten über das technisch zwingende Minimum hinaus. Elektronische Kontaktaufnahmen dienen ausschliesslich der Fallbearbeitung. Eine Weitergabe an Dritte ist ausgeschlossen. Es gilt vollumfänglich das revidierte Schweizer Datenschutzgesetz (revDSG).
+            </div>
+        </details>
+
+        <details name="legal">
+            <summary>Urheberrecht</summary>
+            <div class="legal-content">
+                Die Urheber- und alle anderen Rechte an Inhalten, Texten oder anderen Dateien auf dieser Website gehören ausschliesslich der Meleven AG. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung im Voraus zwingend einzuholen.
+            </div>
+        </details>
     </div>
-
-    <section class="legal-section">
-        <h3>Impressum</h3>
-        <p>
-            Gemäss Art. 3 Abs. 1 lit. s UWG:<br>
-            Meleven AG<br>
-            Gehrenstrasse 10<br>
-            8512 Thundorf<br>
-            Schweiz<br>
-            <br>
-            Kontakt: mail@meleven.ch<br>
-            Vertretungsberechtigte Person: Karin Locher, Präsidentin des Verwaltungsrates<br>
-            Handelsregisteramt: Kanton Thurgau<br>
-            Unternehmens-Identifikationsnummer (UID): CHE-176.161.825
-        </p>
-
-        <h3>Datenschutz</h3>
-        <p>
-            Diskretion ist unser Geschäftsmodell. Das gilt auch digital. Diese Webseite setzt keine Cookies, nutzt keine Analysetools und speichert keine Verbindungsdaten über das technisch zwingende Minimum des Hosters hinaus. Wenn Sie uns per E-Mail kontaktieren, verwenden wir Ihre Daten ausschliesslich zur Bearbeitung Ihres Anliegens. Eine Weitergabe an Dritte erfolgt nicht. Wir halten uns streng an das revidierte Schweizer Datenschutzgesetz (revDSG).
-        </p>
-
-        <h3>Urheberrecht</h3>
-        <p>
-            Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich der Meleven AG. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung im Voraus einzuholen.
-        </p>
-    </section>
 
 </body>
 </html>
