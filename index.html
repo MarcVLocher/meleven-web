@@ -3,222 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meleven AG | Merchant Banking</title>
-    <meta name="description" content="Diskrete Merchant Banking Kanzlei. Substanz, Präzision, Diskretion.">
+    <title>Meleven AG · Merchant Banking</title>
+    <meta name="description" content="Diskrete Merchant Banking Kanzlei. Substanz. Präzision. Diskretion.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FFFFFF">
+
+    <!--
+        Schrift Poppins als Annäherung an Bauhaus-Universal / Futura.
+        Drei Schnitte (Light, Regular, Medium) decken das gesamte
+        typografische System ab. Bei Google-Fonts-Aversion können
+        Sie diese Zeile entfernen und Poppins selbst hosten oder
+        durch System-Sans-Serif ersetzen — der Stack im body-CSS
+        fängt das automatisch auf.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
+        /* ============================================================
+           FARBSYSTEM
+           Karmin als einzige Akzentfarbe.
+           Ink-Schwarz für Body. Hairline-Grau für feine Linien.
+           Reinweiss als Hintergrund (kein Cream — die Webseite ist
+           kühler als die Visitenkarte, weil das Bildschirm-Medium
+           kühler ist als Papier).
+           ============================================================ */
         :root {
-            --bg-color: #F4F0EC; /* Zartes Sand- / Marronibraun */
-            --mokka: #4A3525;    /* Mokkabraun für Linien und Akzente */
-            --text-main: #1A1A1A;
-            --text-light: #444444;
+            --carmin: #7A1F2B;
+            --ink:    #111111;
+            --hair:   #BFBAB0;
+            --paper:  #FFFFFF;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         body {
-            /* Moderne, serifenlose Systemschrift für optimale Lesbarkeit und Nüchternheit */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.5;
-            max-width: 680px;
-            margin: 8vh auto;
-            padding: 0 24px;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            /* Silbentrennung aktivieren */
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont,
+                         'Segoe UI', Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            min-height: 100vh;
             hyphens: auto;
             -webkit-hyphens: auto;
-            -ms-hyphens: auto;
         }
 
-        header {
-            border-bottom: 3px solid var(--mokka);
-            padding-bottom: 20px;
-            margin-bottom: 50px;
+        /* ============================================================
+           LAYOUT
+           Asymmetrische Bauhaus-Komposition.
+           Inhalt linksbündig in einer Spalte.
+           Maximalbreite Textzeile ~60 Zeichen für Lesbarkeit.
+           ============================================================ */
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: clamp(40px, 8vh, 100px) clamp(24px, 6vw, 60px);
         }
 
-        .claim {
-            font-size: 0.85rem;
-            font-weight: 600;
+        /* ============================================================
+           COVER-BLOCK
+           Wortmarke gross, Triade als gesperrte Karmin-Auszeichnung.
+           Hauptmotiv der ersten Bildschirmhöhe.
+           ============================================================ */
+        .cover {
+            margin-bottom: clamp(80px, 12vh, 160px);
+        }
+
+        .cover__label {
+            font-size: clamp(11px, 1.4vw, 13px);
+            color: var(--carmin);
+            letter-spacing: 0.4em;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--mokka);
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-
-        h2 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--mokka);
-            margin-top: 40px;
-            margin-bottom: 8px;
-        }
-
-        p {
-            font-size: 1.25rem; /* Vergrösserte, souveräne Proportion */
+            margin-bottom: clamp(60px, 10vh, 120px);
             font-weight: 400;
-            text-align: left;
+        }
+
+        .cover__wordmark {
+            font-size: clamp(56px, 10vw, 110px);
+            font-weight: 500;
+            color: var(--ink);
+            letter-spacing: 0.02em;
+            line-height: 1;
+            margin-bottom: clamp(16px, 2vh, 28px);
+        }
+
+        .cover__subtitle {
+            font-size: clamp(15px, 1.8vw, 18px);
+            color: var(--ink);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .cover__triade {
+            margin-top: clamp(40px, 6vh, 80px);
+            font-size: clamp(13px, 1.6vw, 16px);
+            color: var(--carmin);
+            letter-spacing: 0.06em;
+        }
+
+        /* ============================================================
+           SEKTIONEN
+           Sektionsnummer 48pt Karmin (auf Mobile kleiner via clamp).
+           Sektionstitel 11pt Versalien, gesperrt.
+           Body 18-20pt für 50+-Lesbarkeit.
+           ============================================================ */
+        .section {
+            margin-bottom: clamp(60px, 10vh, 120px);
+        }
+
+        .section__number {
+            font-size: clamp(48px, 7vw, 80px);
+            font-weight: 400;
+            color: var(--carmin);
+            line-height: 1;
+            margin-bottom: clamp(4px, 0.5vh, 8px);
+        }
+
+        .section__title {
+            font-size: clamp(11px, 1.4vw, 13px);
+            color: var(--ink);
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: clamp(20px, 3vh, 36px);
+        }
+
+        .section__body {
+            font-size: clamp(17px, 2vw, 20px);
+            color: var(--ink);
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 640px;
+        }
+
+        .section__body p {
+            margin-bottom: 1em;
+        }
+
+        .section__body p:last-child {
             margin-bottom: 0;
         }
 
-        .contact-block {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 3px solid var(--mokka);
-            font-size: 1.25rem;
+        /* ============================================================
+           KONTAKT
+           Asymmetrisch links, kompakt.
+           Mail-Link in Schwarz ohne Hyperlink-Andeutung
+           (Bauhaus-Konsequenz gegen Default-Web-Blau).
+           ============================================================ */
+        .contact {
+            margin-bottom: clamp(60px, 10vh, 120px);
         }
 
-        a {
-            color: var(--text-main);
+        .contact__lines {
+            font-size: clamp(17px, 2vw, 20px);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .contact__lines a {
+            color: var(--ink);
             text-decoration: none;
-            border-bottom: 1px solid var(--mokka);
-            transition: color 0.2s ease;
+            border-bottom: 1px solid var(--hair);
+            transition: border-color 0.2s ease;
         }
 
-        a:hover {
-            color: var(--mokka);
+        .contact__lines a:hover,
+        .contact__lines a:focus {
+            border-bottom-color: var(--carmin);
+            outline: none;
         }
 
-        /* Juristischer Bereich - Aufklappbar */
-        .legal-nav {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #dcd7d2;
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
+        /* ============================================================
+           SCHLUSS-AKZENT
+           Claim Immobilien. in Karmin, als typografischer
+           Schluss-Punkt. Echo zur Visitenkarte und zum Memo.
+           ============================================================ */
+        .closer {
+            margin-top: clamp(60px, 10vh, 100px);
+            padding-top: clamp(20px, 3vh, 32px);
+            border-top: 1px solid var(--hair);
+            font-size: clamp(15px, 1.8vw, 18px);
+            color: var(--carmin);
+            font-weight: 400;
+        }
+
+        /* ============================================================
+           IMPRESSUM
+           Single details-Element, dezent unter dem Schluss-Akzent.
+           Datenschutz und Urheberrecht als Sub-Sektionen integriert.
+           ============================================================ */
+        .legal {
+            margin-top: clamp(40px, 6vh, 60px);
+            padding-top: clamp(20px, 3vh, 32px);
         }
 
         details {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            margin-bottom: 10px;
+            border-top: 1px solid var(--hair);
+            padding-top: 16px;
         }
 
         summary {
             cursor: pointer;
-            font-weight: 600;
+            font-size: 11px;
+            color: var(--ink);
+            letter-spacing: 0.32em;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-weight: 400;
             list-style: none;
-            color: var(--mokka);
+            padding: 4px 0;
+            transition: color 0.2s ease;
         }
 
-        summary::-webkit-details-marker {
-            display: none;
+        summary::-webkit-details-marker { display: none; }
+        summary::marker { content: ''; }
+
+        summary:hover,
+        summary:focus {
+            color: var(--carmin);
+            outline: none;
         }
 
-        details[open] summary {
-            margin-bottom: 10px;
-            border-bottom: 1px solid var(--mokka);
-            display: inline-block;
+        summary::after {
+            content: '  +';
+            color: var(--carmin);
+            font-weight: 300;
         }
 
-        .legal-content {
-            padding-top: 5px;
-            padding-bottom: 20px;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            width: 100%;
+        details[open] summary::after {
+            content: '  −';
         }
 
-        @media (max-width: 600px) {
-            body { margin: 5vh auto; }
-            .legal-nav { flex-direction: column; gap: 15px; }
+        .legal__content {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--ink);
+            font-weight: 300;
+        }
+
+        .legal__content h3 {
+            font-size: 11px;
+            color: var(--carmin);
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .legal__content h3:first-child {
+            margin-top: 0;
+        }
+
+        .legal__content p {
+            margin-bottom: 12px;
+        }
+
+        .legal__content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ============================================================
+           ACCESSIBILITY UND FOKUS
+           Focus-Outline nur bei Tastatur-Navigation, nicht bei Maus.
+           ============================================================ */
+        a:focus-visible,
+        summary:focus-visible {
+            outline: 2px solid var(--carmin);
+            outline-offset: 4px;
+        }
+
+        a:focus:not(:focus-visible),
+        summary:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+        }
+
+        /* ============================================================
+           PRINT
+           Auch die Print-Variante folgt der Doktrin.
+           ============================================================ */
+        @media print {
+            body { font-size: 11pt; }
+            .legal { page-break-before: always; }
         }
     </style>
 </head>
 <body>
+    <div class="page">
 
-    <header>
-        <div class="claim">Substanz. Präzision. Diskretion.</div>
-        <h1>Meleven AG</h1>
-    </header>
+        <!-- ========================================================
+             COVER
+             Wortmarke gross, Triade als Auszeichnung darüber,
+             Positionierungs-Sätze darunter.
+             ======================================================== -->
+        <header class="cover">
+            <div class="cover__label">Merchant Banking</div>
+            <h1 class="cover__wordmark">Meleven</h1>
+            <div class="cover__subtitle">Aktiengesellschaft  ·  Thundorf</div>
+            <div class="cover__triade">Substanz.  Präzision.  Diskretion.</div>
+        </header>
 
-    <main>
-        <section>
-            <h2>Kanzlei</h2>
-            <p>
-                Die diskrete Merchant Banking Kanzlei für anspruchsvolle Schweizer Klienten. Im Zentrum steht unaufgeregtes, akribisch genaues Arbeiten auf höchstem Niveau.
-            </p>
-        </section>
+        <main>
 
-        <section>
-            <h2>Mandanten</h2>
-            <p>
-                Betreuung von Familien, institutionellen Anlegern und Wirtschaftskanzleien. Der strategische Fokus liegt exklusiv auf Immobilien und Unternehmensbeteiligungen.
-            </p>
-        </section>
+            <!-- ====================================================
+                 01 — KANZLEI
+                 Was Meleven ist (nicht: was es macht).
+                 ==================================================== -->
+            <section class="section">
+                <div class="section__number">01</div>
+                <h2 class="section__title">Kanzlei</h2>
+                <div class="section__body">
+                    <p>Meleven ist eine Merchant Banking Kanzlei für anspruchsvolle Schweizer Klienten.</p>
+                    <p>Im Zentrum steht akribische Aktenführung und unaufgeregte Umsetzung.</p>
+                </div>
+            </section>
 
-        <section>
-            <h2>Methode</h2>
-            <p>
-                Jede Akte erfordert forensisch kühle Prüfung und streng logische Analyse. Die chirurgisch präzise Umsetzung erfolgt danach kompromisslos im Klienteninteresse.
-            </p>
-        </section>
+            <!-- ====================================================
+                 02 — MANDANTEN
+                 Wer Meleven betreut. Klar, kein Selbstlob.
+                 ==================================================== -->
+            <section class="section">
+                <div class="section__number">02</div>
+                <h2 class="section__title">Mandanten</h2>
+                <div class="section__body">
+                    <p>Familien, institutionelle Anleger, Wirtschaftskanzleien.</p>
+                    <p>Der Fokus liegt auf Immobilien.</p>
+                </div>
+            </section>
 
-        <section>
-            <h2>Struktur</h2>
-            <p>
-                Einhundert Prozent Familienbesitz garantieren vollkommene Unabhängigkeit. Die Mandatsführung erfolgt fliessend auf Deutsch, Englisch, Französisch und Italienisch.
-            </p>
-        </section>
+            <!-- ====================================================
+                 03 — STRUKTUR
+                 Familienbesitz und Sprachen — die zwei harten Fakten.
+                 ==================================================== -->
+            <section class="section">
+                <div class="section__number">03</div>
+                <h2 class="section__title">Struktur</h2>
+                <div class="section__body">
+                    <p>Vollständig in Familienbesitz. Unabhängig.</p>
+                    <p>Mandate auf Deutsch, Englisch, Französisch und Italienisch.</p>
+                </div>
+            </section>
 
-        <section>
-            <h2>Kontakt</h2>
-            <div class="contact-block" style="border-top: none; padding-top: 0; margin-top: 8px;">
-                Meleven AG<br>
-                Gehrenstrasse 10<br>
-                8512 Thundorf<br>
-                Schweiz<br><br>
-                <a href="mailto:mail@meleven.ch">mail@meleven.ch</a>
-            </div>
-        </section>
-    </main>
+            <!-- ====================================================
+                 04 — KONTAKT
+                 Adresse, Mail. Kein Kontaktformular.
+                 Wer sich meldet, schreibt eine E-Mail.
+                 ==================================================== -->
+            <section class="section contact">
+                <div class="section__number">04</div>
+                <h2 class="section__title">Kontakt</h2>
+                <div class="contact__lines">
+                    <p>
+                        Meleven Aktiengesellschaft<br>
+                        Gehrenstrasse 10<br>
+                        8512 Thundorf
+                    </p>
+                    <p style="margin-top: 1.2em;">
+                        <a href="mailto:mail@meleven.ch">mail@meleven.ch</a>
+                    </p>
+                </div>
+            </section>
 
-    <div class="legal-nav">
-        <details name="legal">
-            <summary>Impressum</summary>
-            <div class="legal-content">
-                Gemäss Art. 3 Abs. 1 lit. s UWG:<br>
-                Meleven AG<br>
-                Gehrenstrasse 10<br>
-                8512 Thundorf<br>
-                Schweiz<br><br>
-                Kontakt: mail@meleven.ch<br>
-                Vertretung: Karin Locher, Präsidentin des Verwaltungsrates<br>
-                Handelsregisteramt: Kanton Thurgau<br>
-                UID: CHE-176.161.825
-            </div>
-        </details>
+        </main>
 
-        <details name="legal">
-            <summary>Datenschutz</summary>
-            <div class="legal-content">
-                Diskretion ist massgeblich. Diese Webseite setzt keine Cookies, nutzt keine Analysetools und speichert keine Verbindungsdaten über das technisch zwingende Minimum hinaus. Elektronische Kontaktaufnahmen dienen ausschliesslich der Fallbearbeitung. Eine Weitergabe an Dritte ist ausgeschlossen. Es gilt vollumfänglich das revidierte Schweizer Datenschutzgesetz (revDSG).
-            </div>
-        </details>
+        <!-- ========================================================
+             SCHLUSS-AKZENT
+             Claim Immobilien. in Karmin als typografischer
+             Schluss-Punkt. Echo zur Visitenkarte und zum Memo.
+             ======================================================== -->
+        <div class="closer">Immobilien.</div>
 
-        <details name="legal">
-            <summary>Urheberrecht</summary>
-            <div class="legal-content">
-                Die Urheber- und alle anderen Rechte an Inhalten, Texten oder anderen Dateien auf dieser Website gehören ausschliesslich der Meleven AG. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung im Voraus zwingend einzuholen.
-            </div>
-        </details>
+        <!-- ========================================================
+             IMPRESSUM
+             Single details-Element. Datenschutz und Urheberrecht
+             integriert als Sub-Sektionen.
+             ======================================================== -->
+        <div class="legal">
+            <details>
+                <summary>Impressum</summary>
+                <div class="legal__content">
+
+                    <h3>Verantwortlich</h3>
+                    <p>
+                        Meleven Aktiengesellschaft<br>
+                        Gehrenstrasse 10<br>
+                        8512 Thundorf
+                    </p>
+                    <p>
+                        <a href="mailto:mail@meleven.ch" style="color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair);">mail@meleven.ch</a>
+                    </p>
+
+                    <h3>Register</h3>
+                    <p>
+                        Handelsregisteramt Kanton Thurgau<br>
+                        UID CHE-176.161.825<br>
+                        Vertretung Karin Locher, Präsidentin des Verwaltungsrates
+                    </p>
+
+                    <h3>Datenschutz</h3>
+                    <p>
+                        Diese Webseite setzt keine Cookies, nutzt keine Analysetools und speichert keine Verbindungsdaten über das technisch zwingende Minimum hinaus.
+                    </p>
+                    <p>
+                        Elektronische Kontaktaufnahmen dienen ausschliesslich der Fallbearbeitung. Eine Weitergabe an Dritte ist ausgeschlossen.
+                    </p>
+                    <p>
+                        Es gilt das revidierte Schweizer Datenschutzgesetz revDSG.
+                    </p>
+
+                    <h3>Urheberrecht</h3>
+                    <p>
+                        Die Inhalte dieser Webseite sind urheberrechtlich geschützt. Reproduktion bedarf der schriftlichen Zustimmung.
+                    </p>
+
+                </div>
+            </details>
+        </div>
+
     </div>
-
 </body>
 </html>
