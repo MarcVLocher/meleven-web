@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meleven AG · Merchant Banking</title>
-    <meta name="description" content="Diskrete Merchant Banking Kanzlei. Substanz. Präzision. Diskretion.">
+    <meta name="description" content="Die Merchant Banking Kanzlei für Schweizer Anlageimmobilien.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#FFFFFF">
 
     <!--
         Schrift Poppins als Annäherung an Bauhaus-Universal / Futura.
         Drei Schnitte (Light, Regular, Medium) decken das gesamte
-        typografische System ab. Bei Google-Fonts-Aversion können
-        Sie diese Zeile entfernen und Poppins selbst hosten oder
-        durch System-Sans-Serif ersetzen — der Stack im body-CSS
-        fängt das automatisch auf.
+        typografische System ab. Bei Google-Fonts-Aversion diese Zeile
+        entfernen — der System-Stack im body-CSS fängt das automatisch auf.
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,11 +21,11 @@
     <style>
         /* ============================================================
            FARBSYSTEM
-           Karmin als einzige Akzentfarbe.
-           Ink-Schwarz für Body. Hairline-Grau für feine Linien.
-           Reinweiss als Hintergrund (kein Cream — die Webseite ist
-           kühler als die Visitenkarte, weil das Bildschirm-Medium
-           kühler ist als Papier).
+           Karmin als einzige Akzentfarbe — funktional, nie dekorativ.
+           Nach der letzten Doktrin trägt Karmin nur noch zwei Klassen:
+           die Sektionsnummern und den Schluss-Claim. Die aktive
+           Sprache im Sprachwähler erhält Karmin als dritte, ebenfalls
+           funktionale Markierung (Orientierung, kein Schmuck).
            ============================================================ */
         :root {
             --carmin: #7A1F2B;
@@ -59,9 +57,6 @@
 
         /* ============================================================
            LAYOUT
-           Asymmetrische Bauhaus-Komposition.
-           Inhalt linksbündig in einer Spalte.
-           Maximalbreite Textzeile ~60 Zeichen für Lesbarkeit.
            ============================================================ */
         .page {
             max-width: 720px;
@@ -70,21 +65,57 @@
         }
 
         /* ============================================================
-           COVER-BLOCK
-           Wortmarke gross, Triade als gesperrte Karmin-Auszeichnung.
-           Hauptmotiv der ersten Bildschirmhöhe.
+           SPRACHWAHL
+           Typografisch, kein Symbol. DE · FR · EN in gleicher Schrift
+           und Grösse, Punkte als Trenner. Aktive Sprache in Karmin,
+           die anderen in Ink. Oben rechts, dezent.
+           ============================================================ */
+        .langbar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0;
+            margin-bottom: clamp(40px, 6vh, 72px);
+            font-size: clamp(12px, 1.4vw, 14px);
+            letter-spacing: 0.08em;
+        }
+
+        .langbar button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            letter-spacing: inherit;
+            font-weight: 400;
+            color: var(--ink);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .langbar button:hover {
+            color: var(--carmin);
+        }
+
+        .langbar button[aria-current="true"] {
+            color: var(--carmin);
+        }
+
+        .langbar .sep {
+            color: var(--hair);
+            padding: 0 0.6em;
+            user-select: none;
+        }
+
+        /* ============================================================
+           COVER
+           Wortmarke gross. Kein Cover-Label mehr (Merchant-Banking-
+           Redundanz gestrichen). Keine Triade mehr (sie behauptete
+           Tugenden; nach der Doktrin gestrichen). Nur Wortmarke und
+           Ortskontext.
            ============================================================ */
         .cover {
             margin-bottom: clamp(80px, 12vh, 160px);
-        }
-
-        .cover__label {
-            font-size: clamp(11px, 1.4vw, 13px);
-            color: var(--carmin);
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            margin-bottom: clamp(60px, 10vh, 120px);
-            font-weight: 400;
         }
 
         .cover__wordmark {
@@ -103,18 +134,8 @@
             line-height: 1.5;
         }
 
-        .cover__triade {
-            margin-top: clamp(40px, 6vh, 80px);
-            font-size: clamp(13px, 1.6vw, 16px);
-            color: var(--carmin);
-            letter-spacing: 0.06em;
-        }
-
         /* ============================================================
            SEKTIONEN
-           Sektionsnummer 48pt Karmin (auf Mobile kleiner via clamp).
-           Sektionstitel 11pt Versalien, gesperrt.
-           Body 18-20pt für 50+-Lesbarkeit.
            ============================================================ */
         .section {
             margin-bottom: clamp(60px, 10vh, 120px);
@@ -145,23 +166,13 @@
             max-width: 640px;
         }
 
-        .section__body p {
-            margin-bottom: 1em;
-        }
-
-        .section__body p:last-child {
-            margin-bottom: 0;
-        }
+        .section__body p { margin-bottom: 1em; }
+        .section__body p:last-child { margin-bottom: 0; }
 
         /* ============================================================
            KONTAKT
-           Asymmetrisch links, kompakt.
-           Mail-Link in Schwarz ohne Hyperlink-Andeutung
-           (Bauhaus-Konsequenz gegen Default-Web-Blau).
            ============================================================ */
-        .contact {
-            margin-bottom: clamp(60px, 10vh, 120px);
-        }
+        .contact { margin-bottom: clamp(60px, 10vh, 120px); }
 
         .contact__lines {
             font-size: clamp(17px, 2vw, 20px);
@@ -184,8 +195,8 @@
 
         /* ============================================================
            SCHLUSS-AKZENT
-           Claim Immobilien. in Karmin, als typografischer
-           Schluss-Punkt. Echo zur Visitenkarte und zum Memo.
+           Claim in Karmin. Die einzige verbliebene Karmin-Geste neben
+           den Sektionsnummern. Echo zur Visitenkarte und zum Memo.
            ============================================================ */
         .closer {
             margin-top: clamp(60px, 10vh, 100px);
@@ -198,8 +209,6 @@
 
         /* ============================================================
            IMPRESSUM
-           Single details-Element, dezent unter dem Schluss-Akzent.
-           Datenschutz und Urheberrecht als Sub-Sektionen integriert.
            ============================================================ */
         .legal {
             margin-top: clamp(40px, 6vh, 60px);
@@ -226,21 +235,14 @@
         summary::-webkit-details-marker { display: none; }
         summary::marker { content: ''; }
 
-        summary:hover,
-        summary:focus {
-            color: var(--carmin);
-            outline: none;
-        }
+        summary:hover, summary:focus { color: var(--carmin); outline: none; }
 
         summary::after {
             content: '  +';
             color: var(--carmin);
             font-weight: 300;
         }
-
-        details[open] summary::after {
-            content: '  −';
-        }
+        details[open] summary::after { content: '  \2212'; }
 
         .legal__content {
             margin-top: 20px;
@@ -259,46 +261,52 @@
             margin-top: 28px;
             margin-bottom: 12px;
         }
+        .legal__content h3:first-child { margin-top: 0; }
+        .legal__content p { margin-bottom: 12px; }
+        .legal__content p:last-child { margin-bottom: 0; }
 
-        .legal__content h3:first-child {
-            margin-top: 0;
+        .legal__content a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--hair);
         }
 
-        .legal__content p {
-            margin-bottom: 12px;
-        }
+        /* ============================================================
+           SPRACH-SICHTBARKEIT
+           Nur die aktive Sprache wird angezeigt. Steuerung über das
+           lang-Attribut am <html>. Kein Flackern beim Laden, weil
+           CSS die Sichtbarkeit trägt, nicht JavaScript.
+           ============================================================ */
+        [data-lang] { display: none; }
+        html[lang="de"] [data-lang="de"],
+        html[lang="fr"] [data-lang="fr"],
+        html[lang="en"] [data-lang="en"] { display: block; }
 
-        .legal__content p:last-child {
-            margin-bottom: 0;
-        }
+        /* Inline-Elemente (Sprachwahl-Label) korrekt halten */
+        html[lang="de"] span[data-lang="de"],
+        html[lang="fr"] span[data-lang="fr"],
+        html[lang="en"] span[data-lang="en"] { display: inline; }
 
         /* ============================================================
            ACCESSIBILITY UND FOKUS
-           Focus-Outline nur bei Tastatur-Navigation, nicht bei Maus.
            ============================================================ */
         a:focus-visible,
-        summary:focus-visible {
+        summary:focus-visible,
+        .langbar button:focus-visible {
             outline: 2px solid var(--carmin);
             outline-offset: 4px;
         }
-
         a:focus:not(:focus-visible),
-        summary:focus:not(:focus-visible) {
-            outline: none;
-        }
+        summary:focus:not(:focus-visible),
+        .langbar button:focus:not(:focus-visible) { outline: none; }
 
         @media (prefers-reduced-motion: reduce) {
-            * {
-                transition: none !important;
-            }
+            * { transition: none !important; }
         }
 
-        /* ============================================================
-           PRINT
-           Auch die Print-Variante folgt der Doktrin.
-           ============================================================ */
         @media print {
             body { font-size: 11pt; }
+            .langbar { display: none; }
             .legal { page-break-before: always; }
         }
     </style>
@@ -307,66 +315,135 @@
     <div class="page">
 
         <!-- ========================================================
+             SPRACHWAHL
+             Typografisch, kein Symbol. Aktive Sprache in Karmin.
+             ======================================================== -->
+        <nav class="langbar" aria-label="Sprache / Langue / Language">
+            <button onclick="setLang('de')" aria-current="true" lang="de">DE</button>
+            <span class="sep">·</span>
+            <button onclick="setLang('fr')" aria-current="false" lang="fr">FR</button>
+            <span class="sep">·</span>
+            <button onclick="setLang('en')" aria-current="false" lang="en">EN</button>
+        </nav>
+
+        <!-- ========================================================
              COVER
-             Wortmarke gross, Triade als Auszeichnung darüber,
-             Positionierungs-Sätze darunter.
              ======================================================== -->
         <header class="cover">
-            <div class="cover__label">Merchant Banking</div>
             <h1 class="cover__wordmark">Meleven</h1>
-            <div class="cover__subtitle">Aktiengesellschaft  ·  Thundorf</div>
-            <div class="cover__triade">Substanz.  Präzision.  Diskretion.</div>
+            <div class="cover__subtitle">
+                <span data-lang="de">Aktiengesellschaft  ·  Thundorf</span>
+                <span data-lang="fr">Société anonyme  ·  Thundorf</span>
+                <span data-lang="en">Aktiengesellschaft  ·  Thundorf</span>
+            </div>
         </header>
 
         <main>
 
-            <!-- ====================================================
-                 01 — KANZLEI
-                 Was Meleven ist (nicht: was es macht).
-                 ==================================================== -->
+            <!-- ============== 01 ============== -->
             <section class="section">
                 <div class="section__number">01</div>
-                <h2 class="section__title">Kanzlei</h2>
+                <h2 class="section__title">
+                    <span data-lang="de">Kanzlei</span>
+                    <span data-lang="fr">La maison</span>
+                    <span data-lang="en">The house</span>
+                </h2>
                 <div class="section__body">
-                    <p>Meleven ist eine Merchant Banking Kanzlei für anspruchsvolle Schweizer Klienten.</p>
-                    <p>Im Zentrum steht akribische Aktenführung und unaufgeregte Umsetzung.</p>
+                    <div data-lang="de">
+                        <p>Meleven ist die Merchant Banking Kanzlei für Schweizer Anlageimmobilien.</p>
+                        <p>Wir prüfen, bewerten und begleiten den Erwerb von Renditeobjekten.</p>
+                    </div>
+                    <div data-lang="fr">
+                        <p>Meleven est la maison de merchant banking dédiée à l'immobilier de rendement suisse.</p>
+                        <p>Nous examinons, évaluons et accompagnons l'acquisition d'actifs.</p>
+                    </div>
+                    <div data-lang="en">
+                        <p>Meleven is the merchant banking house for Swiss investment property.</p>
+                        <p>We examine, value and guide the acquisition of income-producing assets.</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- ====================================================
-                 02 — MANDANTEN
-                 Wer Meleven betreut. Klar, kein Selbstlob.
-                 ==================================================== -->
+            <!-- ============== 02 ============== -->
             <section class="section">
                 <div class="section__number">02</div>
-                <h2 class="section__title">Mandanten</h2>
+                <h2 class="section__title">
+                    <span data-lang="de">Mandanten</span>
+                    <span data-lang="fr">Mandants</span>
+                    <span data-lang="en">Clients</span>
+                </h2>
                 <div class="section__body">
-                    <p>Familien, institutionelle Anleger, Wirtschaftskanzleien.</p>
-                    <p>Der Fokus liegt auf Immobilien.</p>
+                    <div data-lang="de">
+                        <p>Familien und institutionelle Anleger.</p>
+                        <p>Jeder Fall beginnt mit der Prüfung der Substanz.</p>
+                    </div>
+                    <div data-lang="fr">
+                        <p>Familles et investisseurs institutionnels.</p>
+                        <p>Chaque dossier s'ouvre par l'examen de la substance.</p>
+                    </div>
+                    <div data-lang="en">
+                        <p>Families and institutional investors.</p>
+                        <p>Every case begins with an examination of substance.</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- ====================================================
-                 03 — STRUKTUR
-                 Familienbesitz und Sprachen — die zwei harten Fakten.
-                 ==================================================== -->
+            <!-- ============== 03 ============== -->
             <section class="section">
                 <div class="section__number">03</div>
-                <h2 class="section__title">Struktur</h2>
+                <h2 class="section__title">
+                    <span data-lang="de">Methode</span>
+                    <span data-lang="fr">Méthode</span>
+                    <span data-lang="en">Method</span>
+                </h2>
                 <div class="section__body">
-                    <p>Vollständig in Familienbesitz. Unabhängig.</p>
-                    <p>Mandate auf Deutsch, Englisch, Französisch und Italienisch.</p>
+                    <div data-lang="de">
+                        <p>Wir trennen den Wert eines Renditeobjekts von seinem Preis.</p>
+                        <p>Jede Transaktion wird mit derselben Sorgfalt geführt.</p>
+                    </div>
+                    <div data-lang="fr">
+                        <p>Nous distinguons la valeur d'un actif de son prix.</p>
+                        <p>Chaque transaction est conduite avec le même soin.</p>
+                    </div>
+                    <div data-lang="en">
+                        <p>We distinguish an asset's worth from its price.</p>
+                        <p>Every transaction is conducted with the same care.</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- ====================================================
-                 04 — KONTAKT
-                 Adresse, Mail. Kein Kontaktformular.
-                 Wer sich meldet, schreibt eine E-Mail.
-                 ==================================================== -->
-            <section class="section contact">
+            <!-- ============== 04 ============== -->
+            <section class="section">
                 <div class="section__number">04</div>
-                <h2 class="section__title">Kontakt</h2>
+                <h2 class="section__title">
+                    <span data-lang="de">Haus</span>
+                    <span data-lang="fr">Gouvernance</span>
+                    <span data-lang="en">Governance</span>
+                </h2>
+                <div class="section__body">
+                    <div data-lang="de">
+                        <p>Familiengeführt und unabhängig.</p>
+                        <p>Mandate auf Deutsch, Englisch, Französisch und Italienisch.</p>
+                    </div>
+                    <div data-lang="fr">
+                        <p>De propriété et de direction familiales.</p>
+                        <p>Mandats en allemand, anglais, français et italien.</p>
+                    </div>
+                    <div data-lang="en">
+                        <p>Family-owned and independent.</p>
+                        <p>Mandates in German, English, French and Italian.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============== 05 KONTAKT ============== -->
+            <section class="section contact">
+                <div class="section__number">05</div>
+                <h2 class="section__title">
+                    <span data-lang="de">Kontakt</span>
+                    <span data-lang="fr">Contact</span>
+                    <span data-lang="en">Contact</span>
+                </h2>
                 <div class="contact__lines">
                     <p>
                         Meleven Aktiengesellschaft<br>
@@ -382,59 +459,110 @@
         </main>
 
         <!-- ========================================================
-             SCHLUSS-AKZENT
-             Claim Immobilien. in Karmin als typografischer
-             Schluss-Punkt. Echo zur Visitenkarte und zum Memo.
+             SCHLUSS-AKZENT — Claim in Karmin, sprachabhängig
              ======================================================== -->
-        <div class="closer">Immobilien.</div>
+        <div class="closer">
+            <span data-lang="de">Immobilien.</span>
+            <span data-lang="fr">Immobilier.</span>
+            <span data-lang="en">Real estate.</span>
+        </div>
 
         <!-- ========================================================
              IMPRESSUM
-             Single details-Element. Datenschutz und Urheberrecht
-             integriert als Sub-Sektionen.
              ======================================================== -->
         <div class="legal">
             <details>
-                <summary>Impressum</summary>
+                <summary>
+                    <span data-lang="de">Impressum</span>
+                    <span data-lang="fr">Mentions légales</span>
+                    <span data-lang="en">Legal notice</span>
+                </summary>
                 <div class="legal__content">
 
-                    <h3>Verantwortlich</h3>
-                    <p>
-                        Meleven Aktiengesellschaft<br>
-                        Gehrenstrasse 10<br>
-                        8512 Thundorf
-                    </p>
-                    <p>
-                        <a href="mailto:mail@meleven.ch" style="color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair);">mail@meleven.ch</a>
-                    </p>
+                    <!-- DEUTSCH -->
+                    <div data-lang="de">
+                        <h3>Verantwortlich</h3>
+                        <p>Meleven Aktiengesellschaft<br>Gehrenstrasse 10<br>8512 Thundorf</p>
+                        <p><a href="mailto:mail@meleven.ch">mail@meleven.ch</a></p>
+                        <h3>Register</h3>
+                        <p>Handelsregisteramt Kanton Thurgau<br>UID CHE-176.161.825<br>Vertretung Karin Locher, Präsidentin des Verwaltungsrates</p>
+                        <h3>Datenschutz</h3>
+                        <p>Diese Webseite setzt keine Cookies, nutzt keine Analysetools und speichert keine Verbindungsdaten über das technisch zwingende Minimum hinaus.</p>
+                        <p>Elektronische Kontaktaufnahmen dienen ausschliesslich der Fallbearbeitung. Eine Weitergabe an Dritte ist ausgeschlossen.</p>
+                        <h3>Urheberrecht</h3>
+                        <p>Die Inhalte dieser Webseite sind urheberrechtlich geschützt. Reproduktion bedarf der schriftlichen Zustimmung.</p>
+                    </div>
 
-                    <h3>Register</h3>
-                    <p>
-                        Handelsregisteramt Kanton Thurgau<br>
-                        UID CHE-176.161.825<br>
-                        Vertretung Karin Locher, Präsidentin des Verwaltungsrates
-                    </p>
+                    <!-- FRANÇAIS -->
+                    <div data-lang="fr">
+                        <h3>Responsable</h3>
+                        <p>Meleven Aktiengesellschaft<br>Gehrenstrasse 10<br>8512 Thundorf</p>
+                        <p><a href="mailto:mail@meleven.ch">mail@meleven.ch</a></p>
+                        <h3>Registre</h3>
+                        <p>Registre du commerce du canton de Thurgovie<br>IDE CHE-176.161.825<br>Représentation Karin Locher, présidente du conseil d'administration</p>
+                        <h3>Protection des données</h3>
+                        <p>Ce site n'utilise aucun cookie, aucun outil d'analyse et ne conserve aucune donnée de connexion au-delà du minimum techniquement nécessaire.</p>
+                        <p>Toute prise de contact électronique sert exclusivement au traitement du dossier. Aucune transmission à des tiers n'a lieu.</p>
+                        <h3>Droit d'auteur</h3>
+                        <p>Les contenus de ce site sont protégés par le droit d'auteur. Toute reproduction requiert un accord écrit préalable.</p>
+                    </div>
 
-                    <h3>Datenschutz</h3>
-                    <p>
-                        Diese Webseite setzt keine Cookies, nutzt keine Analysetools und speichert keine Verbindungsdaten über das technisch zwingende Minimum hinaus.
-                    </p>
-                    <p>
-                        Elektronische Kontaktaufnahmen dienen ausschliesslich der Fallbearbeitung. Eine Weitergabe an Dritte ist ausgeschlossen.
-                    </p>
-                    <p>
-                        Es gilt das revidierte Schweizer Datenschutzgesetz revDSG.
-                    </p>
-
-                    <h3>Urheberrecht</h3>
-                    <p>
-                        Die Inhalte dieser Webseite sind urheberrechtlich geschützt. Reproduktion bedarf der schriftlichen Zustimmung.
-                    </p>
+                    <!-- ENGLISH -->
+                    <div data-lang="en">
+                        <h3>Responsible</h3>
+                        <p>Meleven Aktiengesellschaft<br>Gehrenstrasse 10<br>8512 Thundorf, Switzerland</p>
+                        <p><a href="mailto:mail@meleven.ch">mail@meleven.ch</a></p>
+                        <h3>Register</h3>
+                        <p>Commercial Register of the Canton of Thurgau<br>UID CHE-176.161.825<br>Represented by Karin Locher, Chair of the Board</p>
+                        <h3>Data protection</h3>
+                        <p>This site sets no cookies, uses no analytics and stores no connection data beyond the technically necessary minimum.</p>
+                        <p>Electronic contact serves solely the handling of the matter. No data is passed to third parties.</p>
+                        <h3>Copyright</h3>
+                        <p>The contents of this site are protected by copyright. Reproduction requires prior written consent.</p>
+                    </div>
 
                 </div>
             </details>
         </div>
 
     </div>
+
+    <script>
+        /* ========================================================
+           SPRACHUMSCHALTUNG
+           Setzt das lang-Attribut am <html>. CSS regelt die
+           Sichtbarkeit. Kein localStorage (in manchen Umgebungen
+           gesperrt); die Sprache wird optional aus der URL und aus
+           der Browser-Präferenz abgeleitet.
+           ======================================================== */
+        function setLang(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            var buttons = document.querySelectorAll('.langbar button');
+            buttons.forEach(function (b) {
+                b.setAttribute('aria-current',
+                    b.getAttribute('lang') === lang ? 'true' : 'false');
+            });
+            try {
+                var url = new URL(window.location);
+                url.searchParams.set('lang', lang);
+                window.history.replaceState({}, '', url);
+            } catch (e) { /* URL-API nicht verfügbar — kein Problem */ }
+        }
+
+        (function initLang() {
+            var supported = ['de', 'fr', 'en'];
+            var chosen = 'de';
+            try {
+                var param = new URLSearchParams(window.location.search).get('lang');
+                if (param && supported.indexOf(param) !== -1) {
+                    chosen = param;
+                } else {
+                    var nav = (navigator.language || 'de').slice(0, 2).toLowerCase();
+                    if (supported.indexOf(nav) !== -1) chosen = nav;
+                }
+            } catch (e) { /* Fallback bleibt de */ }
+            setLang(chosen);
+        })();
+    </script>
 </body>
 </html>
