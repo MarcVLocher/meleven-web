@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meleven AG · Kontor für Anlageimmobilien</title>
-    <meta name="description" content="Das Kontor für Schweizer Anlageimmobilien.">
+    <title>Meleven AG · Bewertung von Anlageimmobilien</title>
+    <meta name="description" content="Meleven bewertet Anlageimmobilien. Bewertungen und Gutachten für Dritte.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#FFFFFF">
 
@@ -280,12 +280,14 @@
         [data-lang] { display: none; }
         html[lang="de"] [data-lang="de"],
         html[lang="fr"] [data-lang="fr"],
-        html[lang="en"] [data-lang="en"] { display: block; }
+        html[lang="en"] [data-lang="en"],
+        html[lang="it"] [data-lang="it"] { display: block; }
 
         /* Inline-Elemente (Sprachwahl-Label) korrekt halten */
         html[lang="de"] span[data-lang="de"],
         html[lang="fr"] span[data-lang="fr"],
-        html[lang="en"] span[data-lang="en"] { display: inline; }
+        html[lang="en"] span[data-lang="en"],
+        html[lang="it"] span[data-lang="it"] { display: inline; }
 
         /* ============================================================
            ACCESSIBILITY UND FOKUS
@@ -318,12 +320,14 @@
              SPRACHWAHL
              Typografisch, kein Symbol. Aktive Sprache in Karmin.
              ======================================================== -->
-        <nav class="langbar" aria-label="Sprache / Langue / Language">
+        <nav class="langbar" aria-label="Sprache / Langue / Language / Lingua">
             <button onclick="setLang('de')" aria-current="true" lang="de">DE</button>
             <span class="sep">·</span>
             <button onclick="setLang('fr')" aria-current="false" lang="fr">FR</button>
             <span class="sep">·</span>
             <button onclick="setLang('en')" aria-current="false" lang="en">EN</button>
+            <span class="sep">·</span>
+            <button onclick="setLang('it')" aria-current="false" lang="it">IT</button>
         </nav>
 
         <!-- ========================================================
@@ -335,6 +339,7 @@
                 <span data-lang="de">Aktiengesellschaft  ·  Thundorf</span>
                 <span data-lang="fr">Société anonyme  ·  Thundorf</span>
                 <span data-lang="en">Aktiengesellschaft  ·  Thundorf</span>
+                <span data-lang="it">Società anonima  ·  Thundorf</span>
             </div>
         </header>
 
@@ -344,22 +349,27 @@
             <section class="section">
                 <div class="section__number">01</div>
                 <h2 class="section__title">
-                    <span data-lang="de">Kanzlei</span>
+                    <span data-lang="de">Haus</span>
                     <span data-lang="fr">La maison</span>
                     <span data-lang="en">The house</span>
+                    <span data-lang="it">La casa</span>
                 </h2>
                 <div class="section__body">
                     <div data-lang="de">
-                        <p>Meleven ist das Kontor für Schweizer Anlageimmobilien.</p>
-                        <p>Wir prüfen, bewerten und begleiten den Erwerb von Renditeobjekten.</p>
+                        <p>Meleven bewertet Anlageimmobilien.</p>
+                        <p>Die Gesellschaft erstellt Bewertungen und Gutachten für Dritte. Familiengeführt und unabhängig.</p>
                     </div>
                     <div data-lang="fr">
-                        <p>Meleven est le comptoir dédié à l'immobilier de rendement suisse.</p>
-                        <p>Nous examinons, évaluons et accompagnons l'acquisition d'actifs.</p>
+                        <p>Meleven évalue l'immobilier de rendement.</p>
+                        <p>La société établit des évaluations et des expertises pour le compte de tiers. Une maison familiale et indépendante.</p>
                     </div>
                     <div data-lang="en">
-                        <p>Meleven is the house for Swiss investment property.</p>
-                        <p>We examine, value and guide the acquisition of income-producing assets.</p>
+                        <p>Meleven values investment property.</p>
+                        <p>The company prepares valuations and expert reports for third parties. Family-owned and independent.</p>
+                    </div>
+                    <div data-lang="it">
+                        <p>Meleven valuta immobili da reddito.</p>
+                        <p>La società redige valutazioni e perizie per conto di terzi. A conduzione familiare e indipendente.</p>
                     </div>
                 </div>
             </section>
@@ -368,22 +378,27 @@
             <section class="section">
                 <div class="section__number">02</div>
                 <h2 class="section__title">
-                    <span data-lang="de">Mandanten</span>
-                    <span data-lang="fr">Mandants</span>
-                    <span data-lang="en">Clients</span>
+                    <span data-lang="de">Bewertung</span>
+                    <span data-lang="fr">Évaluation</span>
+                    <span data-lang="en">Valuation</span>
+                    <span data-lang="it">Valutazione</span>
                 </h2>
                 <div class="section__body">
                     <div data-lang="de">
-                        <p>Familien und institutionelle Anleger.</p>
-                        <p>Jeder Fall beginnt mit der Prüfung der Substanz.</p>
+                        <p>Der Marktwert eines Renditeobjekts auf einen Stichtag.</p>
+                        <p>Ertragswert, Discounted Cashflow, Vergleichswert. Der Bericht legt Annahmen, Quellen und Bandbreite offen.</p>
                     </div>
                     <div data-lang="fr">
-                        <p>Familles et investisseurs institutionnels.</p>
-                        <p>Chaque dossier s'ouvre par l'examen de la substance.</p>
+                        <p>La valeur de marché d'un actif de rendement à une date de référence.</p>
+                        <p>Valeur de rendement, flux de trésorerie actualisés, valeur comparative. Le rapport expose les hypothèses, les sources et la fourchette.</p>
                     </div>
                     <div data-lang="en">
-                        <p>Families and institutional investors.</p>
-                        <p>Every case begins with an examination of substance.</p>
+                        <p>The market value of an income-producing asset at a valuation date.</p>
+                        <p>Income capitalisation, discounted cash flow, comparable sales. The report sets out assumptions, sources and the range.</p>
+                    </div>
+                    <div data-lang="it">
+                        <p>Il valore di mercato di un immobile da reddito a una data di riferimento.</p>
+                        <p>Valore reddituale, flussi di cassa attualizzati, valore comparativo. Il rapporto espone ipotesi, fonti e intervallo di valore.</p>
                     </div>
                 </div>
             </section>
@@ -392,22 +407,27 @@
             <section class="section">
                 <div class="section__number">03</div>
                 <h2 class="section__title">
-                    <span data-lang="de">Methode</span>
-                    <span data-lang="fr">Méthode</span>
-                    <span data-lang="en">Method</span>
+                    <span data-lang="de">Gutachten</span>
+                    <span data-lang="fr">Expertise</span>
+                    <span data-lang="en">Expert report</span>
+                    <span data-lang="it">Perizia</span>
                 </h2>
                 <div class="section__body">
                     <div data-lang="de">
-                        <p>Wir trennen den Wert eines Renditeobjekts von seinem Preis.</p>
-                        <p>Jede Transaktion wird mit derselben Sorgfalt geführt.</p>
+                        <p>Ein Gutachten beantwortet eine gestellte Frage.</p>
+                        <p>Mietwert, Tragfähigkeit eines Mieterspiegels, Instandsetzungsbedarf, Wert im Erwerbszeitpunkt. Jeder Auftrag beginnt mit der Prüfung der Unterlagen.</p>
                     </div>
                     <div data-lang="fr">
-                        <p>Nous distinguons la valeur d'un actif de son prix.</p>
-                        <p>Chaque transaction est conduite avec le même soin.</p>
+                        <p>Une expertise répond à une question posée.</p>
+                        <p>Valeur locative, solidité d'un état locatif, besoins de remise en état, valeur à la date d'acquisition. Chaque mandat s'ouvre par l'examen des pièces.</p>
                     </div>
                     <div data-lang="en">
-                        <p>We distinguish an asset's worth from its price.</p>
-                        <p>Every transaction is conducted with the same care.</p>
+                        <p>An expert report answers a question that has been put.</p>
+                        <p>Rental value, the soundness of a rent roll, repair requirements, worth at the date of acquisition. Every engagement begins with an examination of the documents.</p>
+                    </div>
+                    <div data-lang="it">
+                        <p>Una perizia risponde a una domanda precisa.</p>
+                        <p>Valore locativo, solidità di uno stato locativo, fabbisogno di risanamento, valore alla data di acquisto. Ogni incarico inizia con l'esame dei documenti.</p>
                     </div>
                 </div>
             </section>
@@ -416,22 +436,27 @@
             <section class="section">
                 <div class="section__number">04</div>
                 <h2 class="section__title">
-                    <span data-lang="de">Haus</span>
-                    <span data-lang="fr">Gouvernance</span>
-                    <span data-lang="en">Governance</span>
+                    <span data-lang="de">Auftraggeber</span>
+                    <span data-lang="fr">Mandants</span>
+                    <span data-lang="en">Clients</span>
+                    <span data-lang="it">Committenti</span>
                 </h2>
                 <div class="section__body">
                     <div data-lang="de">
-                        <p>Familiengeführt und unabhängig.</p>
-                        <p>Mandate auf Deutsch, Englisch, Französisch und Italienisch.</p>
+                        <p>Eigentümer, Familien, institutionelle Anleger und ihre Berater.</p>
+                        <p>Aufträge auf Deutsch, Englisch, Französisch und Italienisch.</p>
                     </div>
                     <div data-lang="fr">
-                        <p>De propriété et de direction familiales.</p>
-                        <p>Mandats en allemand, anglais, français et italien.</p>
+                        <p>Propriétaires, familles, investisseurs institutionnels et leurs conseils.</p>
+                        <p>Mandats en français, allemand, anglais et italien.</p>
                     </div>
                     <div data-lang="en">
-                        <p>Family-owned and independent.</p>
-                        <p>Mandates in German, English, French and Italian.</p>
+                        <p>Owners, families, institutional investors and their advisers.</p>
+                        <p>Engagements in English, German, French and Italian.</p>
+                    </div>
+                    <div data-lang="it">
+                        <p>Proprietari, famiglie, investitori istituzionali e i loro consulenti.</p>
+                        <p>Incarichi in italiano, tedesco, francese e inglese.</p>
                     </div>
                 </div>
             </section>
@@ -443,6 +468,7 @@
                     <span data-lang="de">Kontakt</span>
                     <span data-lang="fr">Contact</span>
                     <span data-lang="en">Contact</span>
+                    <span data-lang="it">Contatto</span>
                 </h2>
                 <div class="contact__lines">
                     <p>
@@ -465,6 +491,7 @@
             <span data-lang="de">Immobilien.</span>
             <span data-lang="fr">Immobilier.</span>
             <span data-lang="en">Real estate.</span>
+            <span data-lang="it">Immobili.</span>
         </div>
 
         <!-- ========================================================
@@ -476,10 +503,9 @@
                     <span data-lang="de">Impressum</span>
                     <span data-lang="fr">Mentions légales</span>
                     <span data-lang="en">Legal notice</span>
+                    <span data-lang="it">Note legali</span>
                 </summary>
                 <div class="legal__content">
-
-                    <!-- DEUTSCH -->
                     <div data-lang="de">
                         <h3>Verantwortlich</h3>
                         <p>Meleven Aktiengesellschaft<br>Gehrenstrasse 10<br>8512 Thundorf</p>
@@ -488,12 +514,10 @@
                         <p>Handelsregisteramt Kanton Thurgau<br>UID CHE-176.161.825<br>Vertretung Karin Locher, Präsidentin des Verwaltungsrates</p>
                         <h3>Datenschutz</h3>
                         <p>Diese Webseite setzt keine Cookies, nutzt keine Analysetools und speichert keine Verbindungsdaten über das technisch zwingende Minimum hinaus.</p>
-                        <p>Elektronische Kontaktaufnahmen dienen ausschliesslich der Fallbearbeitung. Eine Weitergabe an Dritte ist ausgeschlossen.</p>
+                        <p>Elektronische Kontaktaufnahmen dienen ausschliesslich der Auftragsbearbeitung. Eine Weitergabe an Dritte ist ausgeschlossen.</p>
                         <h3>Urheberrecht</h3>
                         <p>Die Inhalte dieser Webseite sind urheberrechtlich geschützt. Reproduktion bedarf der schriftlichen Zustimmung.</p>
                     </div>
-
-                    <!-- FRANÇAIS -->
                     <div data-lang="fr">
                         <h3>Responsable</h3>
                         <p>Meleven Aktiengesellschaft<br>Gehrenstrasse 10<br>8512 Thundorf</p>
@@ -502,12 +526,10 @@
                         <p>Registre du commerce du canton de Thurgovie<br>IDE CHE-176.161.825<br>Représentation Karin Locher, présidente du conseil d'administration</p>
                         <h3>Protection des données</h3>
                         <p>Ce site n'utilise aucun cookie, aucun outil d'analyse et ne conserve aucune donnée de connexion au-delà du minimum techniquement nécessaire.</p>
-                        <p>Toute prise de contact électronique sert exclusivement au traitement du dossier. Aucune transmission à des tiers n'a lieu.</p>
+                        <p>Toute prise de contact électronique sert exclusivement au traitement du mandat. Aucune transmission à des tiers n'a lieu.</p>
                         <h3>Droit d'auteur</h3>
                         <p>Les contenus de ce site sont protégés par le droit d'auteur. Toute reproduction requiert un accord écrit préalable.</p>
                     </div>
-
-                    <!-- ENGLISH -->
                     <div data-lang="en">
                         <h3>Responsible</h3>
                         <p>Meleven Aktiengesellschaft<br>Gehrenstrasse 10<br>8512 Thundorf, Switzerland</p>
@@ -516,11 +538,22 @@
                         <p>Commercial Register of the Canton of Thurgau<br>UID CHE-176.161.825<br>Represented by Karin Locher, Chair of the Board</p>
                         <h3>Data protection</h3>
                         <p>This site sets no cookies, uses no analytics and stores no connection data beyond the technically necessary minimum.</p>
-                        <p>Electronic contact serves solely the handling of the matter. No data is passed to third parties.</p>
+                        <p>Electronic contact serves solely the handling of the engagement. No data is passed to third parties.</p>
                         <h3>Copyright</h3>
                         <p>The contents of this site are protected by copyright. Reproduction requires prior written consent.</p>
                     </div>
-
+                    <div data-lang="it">
+                        <h3>Responsabile</h3>
+                        <p>Meleven Aktiengesellschaft<br>Gehrenstrasse 10<br>8512 Thundorf</p>
+                        <p><a href="mailto:mail@meleven.ch">mail@meleven.ch</a></p>
+                        <h3>Registro</h3>
+                        <p>Registro di commercio del Cantone Turgovia<br>IDI CHE-176.161.825<br>Rappresentanza Karin Locher, presidente del consiglio di amministrazione</p>
+                        <h3>Protezione dei dati</h3>
+                        <p>Questo sito non utilizza cookie né strumenti di analisi e non conserva dati di connessione oltre il minimo tecnicamente necessario.</p>
+                        <p>Ogni contatto elettronico serve esclusivamente alla gestione dell'incarico. È esclusa qualsiasi trasmissione a terzi.</p>
+                        <h3>Diritto d'autore</h3>
+                        <p>I contenuti di questo sito sono protetti dal diritto d'autore. Ogni riproduzione richiede il previo consenso scritto.</p>
+                    </div>
                 </div>
             </details>
         </div>
@@ -528,13 +561,6 @@
     </div>
 
     <script>
-        /* ========================================================
-           SPRACHUMSCHALTUNG
-           Setzt das lang-Attribut am <html>. CSS regelt die
-           Sichtbarkeit. Kein localStorage (in manchen Umgebungen
-           gesperrt); die Sprache wird optional aus der URL und aus
-           der Browser-Präferenz abgeleitet.
-           ======================================================== */
         function setLang(lang) {
             document.documentElement.setAttribute('lang', lang);
             var buttons = document.querySelectorAll('.langbar button');
@@ -546,11 +572,11 @@
                 var url = new URL(window.location);
                 url.searchParams.set('lang', lang);
                 window.history.replaceState({}, '', url);
-            } catch (e) { /* URL-API nicht verfügbar — kein Problem */ }
+            } catch (e) { /* URL-API nicht verfügbar */ }
         }
 
         (function initLang() {
-            var supported = ['de', 'fr', 'en'];
+            var supported = ['de', 'fr', 'en', 'it'];
             var chosen = 'de';
             try {
                 var param = new URLSearchParams(window.location.search).get('lang');
